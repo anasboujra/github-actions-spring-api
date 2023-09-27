@@ -14,7 +14,7 @@ class HomeTest {
 
     @Test
     void homeShouldReturnTheAppropriateString() {
-        var expected = "Welcome.\nthis is the homes page";
+        var expected = "Welcome.\nthis is the lol page";
 
         var result = home.home();
 
