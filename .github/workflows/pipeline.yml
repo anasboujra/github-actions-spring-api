@@ -22,5 +22,13 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+      - name: Cache Maven packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
       - name: Unit test
         run: ./mvnw clean verify
